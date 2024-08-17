@@ -11,7 +11,7 @@ public class RewardValue {
     }
 
     public RewardValue(int miles){
-        cashBalance = miles * milesToCashRate;
+        cashBalance = miles * milesToCashRate;//miles to cash
     }
 
 
