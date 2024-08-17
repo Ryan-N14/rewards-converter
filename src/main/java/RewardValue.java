@@ -1,8 +1,8 @@
 public class RewardValue {
 
-    private double milesToCashRate = 0.0035;
-    private double cashBalance = 0;
-    private double milesBalance = 0;
+    public static final double milesToCashRate = 0.0035;
+    private double cashBalance;
+
 
 
 
@@ -10,23 +10,20 @@ public class RewardValue {
         cashBalance = cash;
     }
 
-    public RewardValue(double miles, boolean isMiles){
-        milesBalance = miles;
+    public RewardValue(int miles){
+        cashBalance = miles * milesToCashRate;//miles to cash
     }
-
 
 
 
     //Methods
     public double getCashValue(){
-        cashBalance = milesBalance * milesToCashRate; //converting the miles to cash
         return cashBalance;
     }
 
 
     public double getMilesValue(){
-        milesBalance = cashBalance / milesToCashRate; //converting cash to miles
-        return milesBalance;
+        return (int)(cashBalance / milesToCashRate); //converting cash to miles
     }
 
 
