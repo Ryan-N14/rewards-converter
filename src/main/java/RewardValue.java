@@ -11,21 +11,8 @@ public class RewardValue {
     }
 
     public RewardValue(int miles){
-        cashBalance = convertToCash(miles);
+        cashBalance = miles * milesToCashRate;
     }
-
-
-
-
-    private static double convertToMiles(double cash){
-        return (int)(cash / milesToCashRate);
-    }
-
-    private static double convertToCash(int miles){
-        return miles * milesToCashRate;
-    }
-
-
 
 
 
@@ -36,7 +23,7 @@ public class RewardValue {
 
 
     public double getMilesValue(){
-        return convertToMiles(cashBalance); //converting cash to miles
+        return (int)(cashBalance / milesToCashRate); //converting cash to miles
     }
 
 
